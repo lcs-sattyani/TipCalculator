@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: Any) {
+    
         let billAmountAsString = billAmount.text!
         let tipPercentAsString = tipPercent.text!
         let numberOfPeopleAsString = numberOfPeople.text!
@@ -45,10 +46,11 @@ class ViewController: UIViewController {
         let tipPerPersonCalculation = totalTip / numberOfPeopleAsDouble
         
         // Send the results to view
-        tipTotal.text = String(totalTip)
-        tipPerPerson.text = String(tipPerPersonCalculation)
-        
-        
+    //    tipTotal.text = String(totalTip)
+      //  tipTotal.text = "$\(totalTip)"
+         tipTotal.text = String(format: "$%.2f", totalTip)
+       // tipPerPerson.text = String(tipPerPersonCalculation)
+         tipPerPerson.text = "$\(tipPerPersonCalculation)"
         
 
         
